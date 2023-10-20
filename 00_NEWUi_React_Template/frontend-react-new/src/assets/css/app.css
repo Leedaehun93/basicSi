@@ -1,0 +1,94 @@
+﻿nav,
+#content-wrapper {
+  padding: 20px;
+  width: 60vw;
+  margin: 0 auto;
+}
+
+body {
+  background-color: #f8f9fc;
+}
+
+/* 메뉴 - 본문 사이 구분 막대 */
+.gutter {
+  z-index: -1;
+  height: 40px;
+  /* 글자 세로 중앙 정렬 : p 태그만 가능(높이와 똑같이 값 지정) */
+  line-height: 40px;
+  width: 100%;
+  background-color: white;
+}
+
+/* 본문 */
+#content-wrapper {
+  background-color: #f8f9fc;
+  overflow-x: hidden;
+}
+
+/* h1 태그에 좌측 그린 막대 추가 */
+h1:before {
+  content: "";
+  padding-left: 10px;
+  border-left: 10px solid green;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* 펼침 메뉴 배경 정의 */
+.sidebar-wrapper {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 0;
+  transition: all 0.4s ease;
+  background: rgb(255, 255, 255);
+}
+
+/* 마우스가 올라가면 펼침 메뉴 배경 실행됨 : 슬라이드 */
+.sidebar-wrapper.active {
+  z-index: 99999;
+  top: 50px;
+  /* 펼침메뉴 세로 크기 조절 가능 */
+  height: 250px;
+  transition: all 0.4s ease;
+  border-bottom: 1px solid #f8f9fc;
+}
+
+/* 메뉴 목록 : 처음에는 안보이다가 마우스가 메뉴에 올라가면 보임 */
+.sidebar-nav {
+  margin: 10px auto;
+  width: 60vw;
+  /* 높이를 위/아래 마진을 뺀 크기를 자동으로 계산에서 저장함 : 보기좋게 배치됨 */
+  height: calc(100% - 20px);
+  visibility: hidden;
+}
+
+/* 펼침 메뉴 목록에 마우스가 올라가면 */
+.sidebar-nav li a:hover {
+  background: #FFFAFA;
+}
+
+/* 마우스 클릭 막기 */
+.sidebar-subject {
+  pointer-events: none;
+}
+
+/* 제목줄에 패이드 인 효과 */
+.fade-in-box {
+  animation: fadein 3s;
+}
+/* 위의 fadein 함수 */
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
