@@ -156,7 +156,7 @@ CREATE TABLE TB_CINEMA_FAQ
         CONSTRAINT PK_CINEMA_FAQ PRIMARY KEY, -- faq 번호
     QUESTION    VARCHAR2(255),                -- 제목
     ANSWER      VARCHAR2(4000),               -- 내용
-    SORT_ORDER  NUMBER DEFAULT 0,             -- 출력순서(숫자가 클수록 먼저 출력됨)
+    SORT_ORDER  NUMBER DEFAULT 0,             -- 출력순서 정렬순서 바꾸기 컬럼 (숫자가 클수록 먼저 출력됨)
     DELETE_YN   VARCHAR2(1) DEFAULT 'N',
     INSERT_TIME VARCHAR2(255),
     UPDATE_TIME VARCHAR2(255),

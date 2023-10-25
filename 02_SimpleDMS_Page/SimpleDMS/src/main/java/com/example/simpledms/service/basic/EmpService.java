@@ -1,9 +1,8 @@
 package com.example.simpledms.service.basic;
 
 
-import com.example.simpledms.model.entity.basic.Dept;
 import com.example.simpledms.model.entity.basic.Emp;
-import com.example.simpledms.repository.EmpRepository;
+import com.example.simpledms.repository.basic.EmpRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

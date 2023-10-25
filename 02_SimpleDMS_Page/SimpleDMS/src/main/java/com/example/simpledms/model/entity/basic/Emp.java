@@ -14,7 +14,7 @@ import javax.persistence.*;
  * fileName : Member
  * author : kangtaegyung
  * date : 2022/10/14
- * description : 회원 정보 테이블
+ * description : 회원 정보 테이블 모델 클래스
  * 요약 :
  * <p>
  * ===========================================================

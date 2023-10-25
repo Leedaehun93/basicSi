@@ -2,7 +2,7 @@ package com.example.simpledms.service.basic;
 
 
 import com.example.simpledms.model.entity.basic.Dept;
-import com.example.simpledms.repository.DeptRepository;
+import com.example.simpledms.repository.basic.DeptRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -43,7 +43,7 @@ public class DeptService {
         return page;
     }
 
-    // 저장 함수
+    // 저장 함수(수정 함수)
     public Dept save(Dept dept) {
         Dept dept2 = deptRepository.save(dept);
         return dept2;
