@@ -22,6 +22,13 @@ import AddCustomer from "./pages/basic/customer/AddCustomer";
 import Qna from "./pages/basic/qna/Qna";
 import Customer from "./pages/basic/customer/Customer";
 import FaqList from "./pages/normal/faq/FaqList";
+import AddFaq from "./pages/normal/faq/AddFaq";
+import AddCinemaFaq from "./pages/normal/cinema/AddCinemaFaq";
+import Faq from "./pages/normal/faq/Faq";
+import CinemaFaqList from "./pages/normal/cinema/CinemaFaqList";
+import CinemaFaq from "./pages/normal/cinema/CinemaFaq";
+import ReplyBoardList from "./pages/normal/reply-board/ReplyBoardList";
+import ThreadBoardList from "./pages/normal/thread-board/ThreadBoardList";
 
 function App() {
   return (
@@ -101,10 +108,49 @@ function App() {
               벡엔드 : CustomerService(수정/상세조회/삭제 함수)
                       CustomerController(수정/상세조회/삭제 함수)
            */}
-           <Route path="/customer/:cid" element={<Customer />} />
+          <Route path="/customer/:cid" element={<Customer />} />
 
-           {/* faq */}
-           <Route path="/faq" element={<FaqList />} />
+          {/* TODO: faq */}
+          <Route path="/faq" element={<FaqList />} />
+          <Route path="/Add-faq" element={<AddFaq />} />
+          <Route path="/faq/:no" element={<Faq />} />
+
+          {/* TODO: cinemafaq */}
+          {/* 연습5) cinema faq 전체조회 기능을 구현하세요.
+              (단, 화면에 아코디언으로 보여주세요)
+              프론트 - ICinemaFaq.ts (타입 : schema.sql )
+                      CinemaFaqService.ts (axios 공통 crud 함수)
+                      CinemaFaqList.tsx (전체조회)
+                      App.tsx (메뉴 달기 : /cinema-faq)
+              벡엔드 - 모델 엔티티 : CinemaFaq
+                      CinemaFaqRepository
+                      CinemaFaqService
+                      CinemaFaqController
+           */}
+          <Route path="/cinema-faq" element={<CinemaFaqList />} />
+
+          {/* 연습 6) cinemaFaq 추가 기능을 작성하세요
+                프론트 - App.tsx : url - /add-cinema-faq
+                        AddCinemaFaq.tsx (추가페이지)
+                벡엔드 - CinemaService (저장함수)
+                        CinemaController (저장함수)
+           */}
+          <Route path="/Add-Cinema-faq" element={<AddCinemaFaq />} />
+
+          {/* 연습 1) cinema faq 에 상세조회 기능을 추가하세요
+              프론트/벡엔드 모두 작성하세요(수정/삭제/상세조회 기능)
+           */}
+          <Route path="/cinema-faq/:cfno" element={<CinemaFaq />} />
+
+          {/* TODO: reply-board */}
+          <Route path="/reply-board" element={<ReplyBoardList />} />
+
+          {/* TODO: thread-board */}
+          {/* 연습 1) url : /thread-board 쓰레드보드(답변형게시판)
+              프론트: ThreadBoardList (전체조회 페이지)
+              계층형 기능을 추가하세요 (프론트 / 벡엔드)
+           */}
+          <Route path="/thread-board" element={<ThreadBoardList />} />
 
           {/* NotFound */}
           <Route path="*" element={<NotFound />} />

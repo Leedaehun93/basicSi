@@ -107,11 +107,11 @@ public class DeptController {
     public ResponseEntity<Object> findById(@PathVariable int dno) {
         try {
 //            상세조회 실행
-            Optional<Dept> optionalEmp = deptService.findById(dno);
+            Optional<Dept> optionalDept = deptService.findById(dno);
 
-            if (optionalEmp.isPresent()) {
+            if (optionalDept.isPresent()) {
 //                성공
-                return new ResponseEntity<>(optionalEmp.get(), HttpStatus.OK);
+                return new ResponseEntity<>(optionalDept.get(), HttpStatus.OK);
             } else {
 //                데이터 없음
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);

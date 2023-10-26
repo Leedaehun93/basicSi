@@ -50,7 +50,7 @@ function AddCustomer() {
     setSubmitted(false); // submitted 변수 초기화
   };
     return (
-      // 여기
+    // TODO: JSX
       <div className="row">
         {submitted ? (
           <div className="col-6 mx-auto">

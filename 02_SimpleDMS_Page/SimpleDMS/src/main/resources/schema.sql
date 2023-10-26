@@ -183,14 +183,15 @@ CREATE TABLE TB_REPLY_BOARD
 -- 답변형 게시판 : 문제
 CREATE TABLE TB_THREAD_BOARD
 (
-    TID         NUMBER NOT NULL
-        CONSTRAINT PK_THREAD_BOARD PRIMARY KEY, -- 게시판번호
-    SUBJECT     VARCHAR2(256),                  -- 제목
-    MAIN_TEXT   VARCHAR2(255),                  -- 내용
-    WRITER      VARCHAR2(255),                  -- 작성자
-    VIEWS       NUMBER DEFAULT 0,               -- 조회수
-    TGROUP      NUMBER,                         -- 트리구조 최상위 부모 노드( 부모가 있을 경우 : 부모번호, 없을 경우 : 자신의 게시판번호 )
-    TPARENT     NUMBER,                         -- 자신의 부모 노드 ( 부모가 있을 경우 : 부모번호, 없을 경우 : 0 )
+    tid         number not null
+        constraint pk_thread_board primary key, -- 게시판번호
+    subject     varchar2(256),                  -- 제목
+    main_text   varchar2(255),                  -- 내용
+    writer      varchar2(255),                  -- 작성자
+    views       number default 0,               -- 조회수
+    tgroup      number,                         -- 트리구조 최상위 부모 노드( 부모가 있을 경우 : 부모번호, 없을 경우 : 자신의 게시판번호 )
+    tparent     number,                         -- 자신의 부모 노드 ( 부모가 있을 경우 : 부모번호, 없을 경우 : 0 )
+
     DELETE_YN   VARCHAR2(1) DEFAULT 'N',
     INSERT_TIME VARCHAR2(255),
     UPDATE_TIME VARCHAR2(255),

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * packageName : com.example.simpledms.controller.normal
@@ -36,7 +37,7 @@ public class CinemaFaqController {
     @Autowired
     CinemaFaqService cinemaFaqService; // DI
 
-    //    전체 조회 + question like 검색 + 정렬
+    // 전체 조회 + question like 검색 + 정렬
     @GetMapping("/cinema-faq")
     public ResponseEntity<Object> findAllByQuestionContaining(
             @RequestParam(defaultValue = "") String question,
@@ -69,11 +70,9 @@ public class CinemaFaqController {
         }
     }
 
-
-    //    저장 함수
+    // 저장 함수
     @PostMapping("/cinema-faq")
     public ResponseEntity<Object> create(@RequestBody CinemaFaq cinemaFaq) {
-
         try {
             // TODO: log.debug(함수명()); 찍어서 에러 확인하기
             log.debug("cinemaFaq" + cinemaFaq);
@@ -84,6 +83,63 @@ public class CinemaFaqController {
             // TODO: log.debug(e.getMessage()); 찍어서 에러 확인하기
             log.debug(e.getMessage());
 //            DB 에러가 났을경우 : INTERNAL_SERVER_ERROR 프론트엔드로 전송
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    // 수정 함수
+    @PutMapping("/cinema-faq/{cfno}")
+    public ResponseEntity<Object> update(
+            @PathVariable int cfno,
+            @RequestBody CinemaFaq cinemaFaq) {
+        try {
+            // TODO: log.debug(함수명()); 찍어서 에러 확인하기
+            log.debug("cinemaFaq" + cinemaFaq);
+            CinemaFaq cinemaFaq2 = cinemaFaqService.save(cinemaFaq); // db 저장
+            return new ResponseEntity<>(cinemaFaq2, HttpStatus.OK);
+        } catch (Exception e) {
+            // TODO: log.debug(e.getMessage()); 찍어서 에러 확인하기
+            log.debug(e.getMessage());
+//            DB 에러가 났을경우 : INTERNAL_SERVER_ERROR 프론트엔드로 전송
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    // 상세 조회(1건 조회)
+    @GetMapping("/cinema-faq/{cfno}")
+    public ResponseEntity<Object> findById(@PathVariable int cfno) {
+        try {
+//            상세조회 실행
+            Optional<CinemaFaq> optionalCinemaFaq = cinemaFaqService.findById(cfno);
+
+            if (optionalCinemaFaq.isPresent()) {
+//                성공
+                return new ResponseEntity<>(optionalCinemaFaq.get(), HttpStatus.OK);
+            } else {
+//                데이터 없음
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+        } catch (Exception e) {
+//            서버 에러
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    // 삭제 함수
+    @DeleteMapping("/cinema-faq/deletion/{cfno}")
+    public ResponseEntity<Object> delete(@PathVariable int cfno) {
+        // 프론트엔드 쪽으로 상태정보를 보내줌
+        try {
+            // 삭제 함수 호출
+            boolean bSuccess = cinemaFaqService.removeById(cfno);
+            if (bSuccess == true) {
+                // delete 문이 성공했을 경우
+                return new ResponseEntity<>(HttpStatus.OK);
+            }
+            // delete 실패했을 경우( 0건 삭제가 될경우 )
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            // DB 에러가 날경우
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

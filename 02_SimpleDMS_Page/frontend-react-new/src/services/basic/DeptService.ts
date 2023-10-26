@@ -1,4 +1,5 @@
-﻿// axios 공통함수 : 벡엔드 연동
+﻿// DeptService.ts : axios 공통 CRUD 함수 : 벡엔드 연동
+
 import IDept from "../../types/basic/IDept";
 import http from "../../utils/http-common";
 

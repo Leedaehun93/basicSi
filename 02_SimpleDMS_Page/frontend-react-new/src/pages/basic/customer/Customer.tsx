@@ -6,9 +6,6 @@ import ICustomer from "../../../types/basic/ICustomer";
 import { useEffect, useState } from "react";
 import CustomerService from "../../../services/basic/CustomerService";
 
-
-
-
 function Customer() {
   // 변수 정의
   // 전체조회 페이지에서 전송한 기본키(qno)
@@ -79,7 +76,7 @@ function Customer() {
     };
 
     return (
-        // 여기
+    // TODO: JSX
         <>
           {/* 제목 start */}
           <TitleCom title="Customer Detail" />

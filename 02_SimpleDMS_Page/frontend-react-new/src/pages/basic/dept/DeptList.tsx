@@ -8,29 +8,29 @@ import IDept from "../../../types/basic/IDept";
 import DeptService from "../../../services/basic/DeptService";
 
 function DeptList() {
-  // 변수 정의
+  // TODO: 변수 정의
   // 부서 배열 변수
   const [dept, setDept] = useState<Array<IDept>>([]);
   // 검색어 변수
   const [searchDname, setSearchDname] = useState<string>("");
 
-  // TODO: 공통 변수 : page(현재페이지번호), count(총페이지건수), pageSize(3,6,9 배열)
+  // 공통 변수 : page(현재페이지번호), count(총페이지건수), pageSize(3,6,9 배열)
   const [page, setPage] = useState<number>(1);
   const [count, setCount] = useState<number>(1);
   const [pageSize, setPageSize] = useState<number>(3); // 1페이지당개수
   // pageSizes : 배열 (셀렉트 박스 사용)
   const pageSizes = [3, 6, 9];
 
-  // 함수 정의
-  // TODO: 1) 컴포넌트가 mounted 될때 한번만 실행됨 : useEffect(() => {실행문},[])
-  // TODO: 2) 컴포넌트의 변수값이 변할때 실행됨 : useEffect(() => {실행문},[감시변수])
+  // TODO: 함수 정의
+  // TODO : 1) 컴포넌트가 mounted 될때 한번만 실행됨 : useEffect(() => {실행문},[])
+  // TODO : 2) 컴포넌트의 변수값이 변할때 실행됨 : useEffect(() => {실행문},[감시변수])
   useEffect(() => {
     retrieveDept(); // 전체 조회
   }, [page, pageSize]);
 
   //   전체조회 함수
   const retrieveDept = () => {
-    // TODO: 벡엔드 매개변수 전송 : + 현재페이지(page), 1페이지당개수(pageSize)
+    // TODO : 벡엔드 매개변수 전송 : + 현재페이지(page), 1페이지당개수(pageSize)
     DeptService.getAll(searchDname, page - 1, pageSize) // 벡엔드 전체조회요청
       .then((response: any) => {
         // 벡엔드 성공시 실행됨
@@ -56,14 +56,14 @@ function DeptList() {
     setSearchDname(searchDname);
   };
 
-  // TODO: handlePageSizeChange : pageSize 값 변경시 실행되는 함수
+  // TODO : handlePageSizeChange : pageSize 값 변경시 실행되는 함수
   // select 태그 수동 바인딩 : 화면값 -> 변수에 저장
   const handlePageSizeChange = (event: any) => {
     setPageSize(event.target.value); // 1페이지당 개수저장(3,6,9)
     setPage(1); // 현재페이지번호 : 1로 강제설정
   };
 
-  // TODO: Pagination 수동 바인딩
+  // TODO : Pagination 수동 바인딩
   //  페이지 번호를 누르면 => page 변수에 값 저장
   const handlePageChange = (event: any, value: number) => {
     // value == 화면의 페이지번호
@@ -71,7 +71,7 @@ function DeptList() {
   };
 
   return (
-    // 여기
+    // TODO: JSX
     <>
       {/* 제목 start */}
       <TitleCom title="Dept List" />
