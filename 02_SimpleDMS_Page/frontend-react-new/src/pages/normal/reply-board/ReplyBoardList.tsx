@@ -18,7 +18,7 @@ function ReplyBoardList() {
   // TODO: 공통 변수 : page(현재페이지번호), count(총페이지건수), pageSize(3,6,9 배열)
   const [page, setPage] = useState<number>(1);
   const [count, setCount] = useState<number>(1);
-  const [pageSize, setPageSize] = useState<number>(3); // 1페이지당개수
+  const [pageSize, setPageSize] = useState<number>(9); // 1페이지당개수
   // TODO: 공통 pageSizes : 배열 (셀렉트 박스 사용)
   const pageSizes = [3, 6, 9];
 
@@ -89,6 +89,7 @@ function ReplyBoardList() {
   const saveReply = () => {
     // 임시 객체
     let data = {
+      // reply.boardTitle 부모제목, reply.boardContent(부모내용), reply.bid(부모번호)
       boardTitle: reply.boardTitle,
       boardContent: reply.boardContent,
       boardWriter: reply.boardWriter,
@@ -198,6 +199,7 @@ function ReplyBoardList() {
           </thead>
           <tbody>
             {replyBoard &&
+            /* TODO: replyBoard.map((data, index) 반복문 */
               replyBoard.map((data, index) => (
                 // 키값 추가 않하면 react 에서 경고를 추가 : 키는 내부적으로 리액트가 rerending 할때 체크하는 값임
                 <tr key={index}>
@@ -214,6 +216,7 @@ function ReplyBoardList() {
                         {/* TODO: 리액트 : onClick={()=>함수명(매개변수)} : 매개변수있으면 */}
                         <span
                           className="badge bg-warning"
+                          /* TODO: onClick={() => newReply(data)} : data 부모객체(게시글)가 => 자식 객체(답글) 로 넘어감 */
                           onClick={() => newReply(data)}
                         >
                           Reply

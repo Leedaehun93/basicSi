@@ -1,11 +1,11 @@
 // IReplyBoard.ts : 타입 인터페이스
 
 export default interface IReplyBoard {
-  bid?: any | null;
-  boardTitle: string;
-  boardContent: string;
-  boardWriter: string;
-  viewCnt: number;
+  bid?: any | null; // 게시판번호
+  boardTitle: string; // 제목
+  boardContent: string; // 내용
+  boardWriter: string; // 작성자
+  viewCnt: number; // 조회수
   boardGroup: any | null;
   boardParent: any | null;
 }

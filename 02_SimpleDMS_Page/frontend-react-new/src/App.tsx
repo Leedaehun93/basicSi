@@ -29,6 +29,10 @@ import CinemaFaqList from "./pages/normal/cinema/CinemaFaqList";
 import CinemaFaq from "./pages/normal/cinema/CinemaFaq";
 import ReplyBoardList from "./pages/normal/reply-board/ReplyBoardList";
 import ThreadBoardList from "./pages/normal/thread-board/ThreadBoardList";
+import AddReplyBoard from "./pages/normal/reply-board/AddReplyBoard";
+import AddThreadBoard from "./pages/normal/thread-board/AddThreadBoard";
+import ReplyBoard from "./pages/normal/reply-board/ReplyBoard";
+import ThreadBoard from "./pages/normal/thread-board/ThreadBoard";
 
 function App() {
   return (
@@ -144,6 +148,12 @@ function App() {
 
           {/* TODO: reply-board */}
           <Route path="/reply-board" element={<ReplyBoardList />} />
+          <Route path="/Add-reply-board" element={<AddReplyBoard />} />
+
+          {/* TODO: <Route path="/reply-board/bid/:bid/boardParent/:boardParent" element={<Cinemafaq />} /> 정리 */}
+          {/* 정리: boardParent = 0 이면 부모글을 클릭 */}
+          {/* 정리: boardParent = 0 아니면 자식글을 클릭 */}
+          <Route path="/reply-board/bid/:bid/boardParent/:boardParent" element={<ReplyBoard />} />
 
           {/* TODO: thread-board */}
           {/* 연습 1) url : /thread-board 쓰레드보드(답변형게시판)
@@ -151,6 +161,17 @@ function App() {
               계층형 기능을 추가하세요 (프론트 / 벡엔드)
            */}
           <Route path="/thread-board" element={<ThreadBoardList />} />
+
+          {/* 연습 1) threadBoardList 전체조회 페이지에  
+              답변글 추가 기능을 추가하세요
+          */}
+
+          {/* 연습 2) url : add-thread-board  추가페이지 작성하세요 
+            프론트/벡엔드 모두 작성
+        */}
+          <Route path="/Add-thread-board" element={<AddThreadBoard />} />
+
+          <Route path="/thread-board/tid/:tid/tparent/:tparent" element={<ThreadBoard />} />
 
           {/* NotFound */}
           <Route path="*" element={<NotFound />} />

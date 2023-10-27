@@ -36,7 +36,7 @@ public class DeptController {
     @Autowired
     DeptService deptService; // DI 가져오기
 
-    // 전체 조회 + dname like 검색
+    //     전체 조회 + dname like 검색
     @GetMapping("/dept")
     public ResponseEntity<Object> find(
             // TODO : 페이징 처리를 위한 공통 @RequestParam
@@ -76,7 +76,7 @@ public class DeptController {
         }
     }
 
-    // 저장 함수
+    //     저장 함수
     @PostMapping("/dept")
     public ResponseEntity<Object> create(@RequestBody Dept dept) {
         try {
@@ -88,7 +88,7 @@ public class DeptController {
         }
     }
 
-    // 수정 함수
+    //     수정 함수
     @PutMapping("/dept/{dno}")
     public ResponseEntity<Object> update(
             @PathVariable int dno,
@@ -97,32 +97,31 @@ public class DeptController {
             Dept dept2 = deptService.save(dept); // db 수정
             return new ResponseEntity<>(dept2, HttpStatus.OK);
         } catch (Exception e) {
-//            DB 에러가 났을경우 : INTERNAL_SERVER_ERROR 프론트엔드로 전송
+            // DB 에러가 났을경우 : INTERNAL_SERVER_ERROR 프론트엔드로 전송
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    // 상세 조회(1건 조회)
+    //     상세 조회(1건 조회)
     @GetMapping("/dept/{dno}")
     public ResponseEntity<Object> findById(@PathVariable int dno) {
         try {
-//            상세조회 실행
+            // 상세조회 실행
             Optional<Dept> optionalDept = deptService.findById(dno);
-
             if (optionalDept.isPresent()) {
-//                성공
+                // 성공
                 return new ResponseEntity<>(optionalDept.get(), HttpStatus.OK);
             } else {
-//                데이터 없음
+                // 데이터 없음
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
         } catch (Exception e) {
-//            서버 에러
+            // 서버 에러
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    // 삭제 함수
+    //     삭제 함수
     @DeleteMapping("/dept/deletion/{dno}")
     public ResponseEntity<Object> delete(@PathVariable int dno) {
         // 프론트엔드 쪽으로 상태정보를 보내줌

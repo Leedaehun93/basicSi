@@ -59,7 +59,7 @@ public class DeptService {
     // 삭제 함수
     public boolean removeById(int dno) {
         if (deptRepository.existsById(dno)) { // dno 있는지 확인
-            deptRepository.deleteById(dno);// 삭제 진행
+            deptRepository.deleteById(dno);   // 삭제 진행
             return true;
         }
         return false;
