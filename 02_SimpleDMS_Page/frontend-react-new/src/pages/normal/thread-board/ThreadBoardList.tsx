@@ -20,7 +20,7 @@ function ThreadBoardList() {
   // 공통 변수 : page(현재페이지번호), count(총페이지건수), pageSize(3,6,9 배열)
   const [page, setPage] = useState<number>(1);
   const [count, setCount] = useState<number>(1);
-  const [pageSize, setPageSize] = useState<number>(3); // 1페이지당개수
+  const [pageSize, setPageSize] = useState<number>(9); // 1페이지당개수
   // 공통 pageSizes : 배열 (셀렉트 박스 사용)
   const pageSizes = [3, 6, 9];
 

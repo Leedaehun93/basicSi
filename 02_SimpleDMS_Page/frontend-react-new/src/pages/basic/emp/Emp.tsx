@@ -2,7 +2,7 @@
 import TitleCom from "../../../components/common/TitleCom";
 import { useNavigate, useParams } from "react-router-dom";
 import IEmp from "../../../types/basic/IEmp";
-import EmpService from "../../../services/basic/EmpService";
+import EmpService from "../../../service/basic/EmpService";
 
 function Emp() {
   // 전체조회 페이지에서 전송한 기본키(dno)

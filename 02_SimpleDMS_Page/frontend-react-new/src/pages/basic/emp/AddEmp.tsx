@@ -1,7 +1,7 @@
 ﻿import React, { useState } from "react";
 import TitleCom from "../../../components/common/TitleCom";
 import IEmp from "../../../types/basic/IEmp";
-import EmpService from "../../../services/basic/EmpService";
+import EmpService from "../../../service/basic/EmpService";
 
 function AddEmp() {
   const initialEmp = {

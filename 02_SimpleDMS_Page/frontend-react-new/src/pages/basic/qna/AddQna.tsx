@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import TitleCom from "../../../components/common/TitleCom";
 import IQna from "../../../types/basic/IQna";
-import QnaService from "../../../services/basic/QnaService";
+import QnaService from "../../../service/basic/QnaService";
 
 function AddQna() {
   // 객체 초기화

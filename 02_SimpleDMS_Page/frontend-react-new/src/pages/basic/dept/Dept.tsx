@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import TitleCom from "../../../components/common/TitleCom";
 import IDept from "../../../types/basic/IDept";
-import DeptService from "../../../services/basic/DeptService";
+import DeptService from "../../../service/basic/DeptService";
 
 function Dept() {
   // TODO: 변수 정의

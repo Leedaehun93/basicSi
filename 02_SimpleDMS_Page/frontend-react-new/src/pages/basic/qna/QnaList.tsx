@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import TitleCom from "../../../components/common/TitleCom";
 import IQna from "../../../types/basic/IQna";
-import QnaService from "../../../services/basic/QnaService";
+import QnaService from "../../../service/basic/QnaService";
 
 function QnaList() {
   // 변수 정의

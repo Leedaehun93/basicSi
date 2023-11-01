@@ -5,7 +5,7 @@ import { Pagination } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import IDept from "../../../types/basic/IDept";
-import DeptService from "../../../services/basic/DeptService";
+import DeptService from "../../../service/basic/DeptService";
 
 function DeptList() {
   // TODO: 변수 정의

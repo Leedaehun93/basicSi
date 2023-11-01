@@ -4,7 +4,7 @@
 
 import React, { useEffect, useState } from 'react'
 import IEmp from '../../../types/basic/IEmp';
-import EmpService from '../../../services/basic/EmpService';
+import EmpService from '../../../service/basic/EmpService';
 import TitleCom from '../../../components/common/TitleCom';
 import { Pagination } from '@mui/material';
 import { Link } from 'react-router-dom';
