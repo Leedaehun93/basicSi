@@ -1,0 +1,19 @@
+-- 상품 + 장바구니 조인 쿼리
+
+-- TB_SIMPLE_PRODUCT + TB_SIMPLE_CART 조인
+-- 공통컬럼으로(SPNO(상품번호)) =(이퀄) 조인
+-- 1) 조인 like 검색
+SELECT SC.*, SP.*
+FROM TB_SIMPLE_CART SC
+    ,TB_SIMPLE_PRODUCT SP
+WHERE SC.SPNO = SP.SPNO
+AND  SP.TITLE LIKE '%%'
+AND  SC.DELETE_YN = 'N'; -- 소프트삭제
+
+-- 2) 조인 상세 검색 : 기본키로 검색 
+SELECT SC.*, SP.*
+FROM TB_SIMPLE_CART SC
+    ,TB_SIMPLE_PRODUCT SP
+WHERE SC.SPNO = SP.SPNO
+AND  SC.SCNO = 1
+AND  SC.DELETE_YN = 'N';
