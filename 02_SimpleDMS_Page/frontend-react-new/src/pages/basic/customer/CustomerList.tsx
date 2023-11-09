@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import ICustomer from '../../../types/basic/ICustomer';
-import CustomerService from '../../../service/basic/CustomerService';
+import CustomerService from '../../../services/basic/CustomerService';
 import TitleCom from '../../../components/common/TitleCom';
 import { Pagination } from '@mui/material';
 import { Link } from 'react-router-dom';

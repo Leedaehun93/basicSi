@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/02_SimpleDMS_Page.iml" filepath="$PROJECT_DIR$/.idea/02_SimpleDMS_Page.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/frontend-react-new.iml" filepath="$PROJECT_DIR$/.idea/frontend-react-new.iml" />
     </modules>
   </component>
 </project>

@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import TitleCom from "../../../components/common/TitleCom";
 import ICustomer from "../../../types/basic/ICustomer";
 import { useEffect, useState } from "react";
-import CustomerService from "../../../service/basic/CustomerService";
+import CustomerService from "../../../services/basic/CustomerService";
 
 function Customer() {
   // 변수 정의

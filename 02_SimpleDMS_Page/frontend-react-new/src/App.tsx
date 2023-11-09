@@ -1,3 +1,5 @@
+/* C:\Work\07_Si\02_SimpleDMS_Page\frontend-react-new\src\App.tsx */
+// TODO: import
 import React from "react";
 // app css import
 import "./assets/css/app.css";
@@ -33,6 +35,18 @@ import AddReplyBoard from "./pages/normal/reply-board/AddReplyBoard";
 import AddThreadBoard from "./pages/normal/thread-board/AddThreadBoard";
 import ReplyBoard from "./pages/normal/reply-board/ReplyBoard";
 import ThreadBoard from "./pages/normal/thread-board/ThreadBoard";
+import CodeCategoryList from "./pages/admin/CodeCategoryList";
+import AddCodeCategory from "./pages/admin/AddCodeCategory";
+import AddCode from "./pages/admin/AddCode";
+import CodeList from "./pages/admin/CodeList";
+import Code from "./pages/admin/Code";
+import SimpleProduct from "./pages/shop/simple-product/SimpleProduct";
+import ProductList from "./pages/shop/product/ProductList";
+import AddSimpleProduct from "./pages/shop/simple-product/AddSimpleProduct";
+import AddProduct from "./pages/shop/product/AddProduct";
+import Product from "./pages/shop/product/Product";
+import SimpleCart from "./pages/shop/simple-product/SimpleCart";
+import SimpleCartList from "./pages/shop/simple-product/SimpleCartList";
 
 function App() {
   return (
@@ -52,12 +66,12 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
 
-          {/* TODO: dept */}
+          {/* TODO : dept */}
           <Route path="/dept" element={<DeptList />} />
           <Route path="/add-dept" element={<AddDept />} />
           <Route path="/dept/:dno" element={<Dept />} />
 
-          {/* TODO: emp */}
+          {/* TODO : emp */}
           {/* todo: emp 에 전체조회 + 페이징 기능 추가하세요
               프론트 : EmpList.tsx (전체조회페이지), App.tsx (메뉴 추가 : /emp)
               벡엔드 : EmpRepository.java, EmpService, EmpController
@@ -79,12 +93,12 @@ function App() {
          */}
           <Route path="/emp/:eno" element={<Emp />} />
 
-          {/* TODO: qna */}
+          {/* TODO : qna */}
           <Route path="/qna" element={<QnaList />} />
           <Route path="/Add-qna" element={<AddQna />} />
           <Route path="/qna/:qno" element={<Qna />} />
 
-          {/* TODO: customer */}
+          {/* TODO : customer */}
           {/* 연습 4) customer 전체조회 페이지를 만들고,
           다양한 검색 기능을 추가하세요 (참고 : qna)
             ( fullName(이름), email(이메일)  : select 태그 넣기)
@@ -114,12 +128,12 @@ function App() {
            */}
           <Route path="/customer/:cid" element={<Customer />} />
 
-          {/* TODO: faq */}
+          {/* TODO : faq */}
           <Route path="/faq" element={<FaqList />} />
           <Route path="/Add-faq" element={<AddFaq />} />
           <Route path="/faq/:no" element={<Faq />} />
 
-          {/* TODO: cinemafaq */}
+          {/* TODO : cinemafaq */}
           {/* 연습5) cinema faq 전체조회 기능을 구현하세요.
               (단, 화면에 아코디언으로 보여주세요)
               프론트 - ICinemaFaq.ts (타입 : schema.sql )
@@ -146,16 +160,19 @@ function App() {
            */}
           <Route path="/cinema-faq/:cfno" element={<CinemaFaq />} />
 
-          {/* TODO: reply-board */}
+          {/* TODO : reply-board */}
           <Route path="/reply-board" element={<ReplyBoardList />} />
           <Route path="/Add-reply-board" element={<AddReplyBoard />} />
 
-          {/* TODO: <Route path="/reply-board/bid/:bid/boardParent/:boardParent" element={<Cinemafaq />} /> 정리 */}
+          {/* TODO : <Route path="/reply-board/bid/:bid/boardParent/:boardParent" element={<Cinemafaq />} /> 정리 */}
           {/* 정리: boardParent = 0 이면 부모글을 클릭 */}
           {/* 정리: boardParent = 0 아니면 자식글을 클릭 */}
-          <Route path="/reply-board/bid/:bid/boardParent/:boardParent" element={<ReplyBoard />} />
+          <Route
+            path="/reply-board/bid/:bid/boardParent/:boardParent"
+            element={<ReplyBoard />}
+          />
 
-          {/* TODO: thread-board */}
+          {/* TODO : thread-board */}
           {/* 연습 1) url : /thread-board 쓰레드보드(답변형게시판)
               프론트: ThreadBoardList (전체조회 페이지)
               계층형 기능을 추가하세요 (프론트 / 벡엔드)
@@ -171,7 +188,32 @@ function App() {
         */}
           <Route path="/Add-thread-board" element={<AddThreadBoard />} />
 
-          <Route path="/thread-board/tid/:tid/tparent/:tparent" element={<ThreadBoard />} />
+          <Route
+            path="/thread-board/tid/:tid/tparent/:tparent"
+            element={<ThreadBoard />}
+          />
+          {/* TODO : codeCategory(대분류 공통코드(부모)) */}
+          <Route path="/code-category" element={<CodeCategoryList />} />
+          <Route path="/add-code-category" element={<AddCodeCategory />} />
+
+          {/* TODO : code(소분류 공통코드(자식)) */}
+          <Route path="/code" element={<CodeList />} />
+          <Route path="/add-code" element={<AddCode />} />
+          <Route path="/code/:codeId" element={<Code />} />
+
+          {/* TODO : (shop)simple-product */}
+          <Route path="/simple-product" element={<SimpleProduct />} />
+          <Route path="/add-simple-product" element={<AddSimpleProduct />} />
+
+          {/* TODO : (연습)product */}
+          <Route path="/product" element={<ProductList />} />
+          <Route path="/add-product" element={<AddProduct />} />
+          <Route path="/product/:pno" element={<Product />} />
+
+          {/* TODO: 장바구니 상세조회 */}
+          <Route path="/simple-cart/:spno" element={<SimpleCart />} />
+          {/* TODO: 장바구니 전체조회 */}
+          <Route path="/simple-cart" element={<SimpleCartList />} />
 
           {/* NotFound */}
           <Route path="*" element={<NotFound />} />

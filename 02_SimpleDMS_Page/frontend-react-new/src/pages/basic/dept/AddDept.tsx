@@ -1,9 +1,10 @@
 ﻿import React, { useEffect, useState } from "react";
 import IDept from "../../../types/basic/IDept";
 import TitleCom from "../../../components/common/TitleCom";
-import DeptService from "../../../service/basic/DeptService";
+import DeptService from "../../../services/basic/DeptService";
 
 function AddDept() {
+  
   // TODO: 변수 정의
   // 객체 초기화
   const initialDept = {

@@ -1,5 +1,5 @@
 package com.example.simpledms.controller.basic;
-
+// import
 import com.example.simpledms.model.entity.basic.Dept;
 import com.example.simpledms.service.basic.DeptService;
 import lombok.extern.slf4j.Slf4j;

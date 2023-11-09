@@ -32,7 +32,7 @@ const getAll = (searchSelect:string, searchKeyword:string, page:number, size:num
   };
 
 
-const DeptService = {
+const QnaService = {
   getAll,
   get,
   create,
@@ -40,4 +40,4 @@ const DeptService = {
   remove,
 };
 
-export default DeptService;
+export default QnaService;

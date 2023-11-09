@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import TitleCom from '../../../components/common/TitleCom';
 import ICustomer from '../../../types/basic/ICustomer';
-import CustomerService from '../../../service/basic/CustomerService';
+import CustomerService from '../../../services/basic/CustomerService';
 
 function AddCustomer() {
    // 객체 초기화
