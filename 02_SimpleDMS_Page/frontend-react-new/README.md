@@ -18,7 +18,6 @@ import Pagination from '@mui/material/Pagination';
 # 5) typescript jquery, jqueryui type 넣기
 # 5-1) typescript jquery 사용
 npm i --save-dev @types/jquery
-npm i @types/jqueryui
 
 # 6) 공통코드 : 프로젝트 시작 시 코드체계를 정의하고 
 # 각각의 테이블에서 사용하는 목적으로 씀

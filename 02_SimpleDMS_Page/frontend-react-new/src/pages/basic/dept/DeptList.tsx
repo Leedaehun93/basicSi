@@ -1,6 +1,5 @@
 // DeptList.tsx : rfce
 // 전체조회페이지 + 페이징
-// TODO: import
 import TitleCom from "../../../components/common/TitleCom";
 import { Pagination } from "@mui/material";
 import { Link } from "react-router-dom";
