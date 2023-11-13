@@ -18,13 +18,14 @@ function AddDept() {
   // 저장버튼 클릭후 submitted = true 변경됨
   const [submitted, setSubmitted] = useState<boolean>(false);
 
-  // input 태그에 수동 바인딩
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target; // 화면값
-    setDept({ ...dept, [name]: value }); // 변수저장
-  };
   
   // TODO: 함수 정의
+    // input 태그에 수동 바인딩
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      const { name, value } = event.target; // 화면값
+      setDept({ ...dept, [name]: value }); // 변수저장
+    };
+
   // 저장 함수
   const saveDept = () => {
     // 임시 부서 객체

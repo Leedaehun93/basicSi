@@ -3,7 +3,6 @@
 import React from "react";
 // app css import
 import "./assets/css/app.css";
-
 import HeaderCom from "./components/common/HeaderCom";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
@@ -51,6 +50,8 @@ import CinemaList from "./pages/shop/cinema/CinemaList";
 import Cinema from "./pages/shop/cinema/Cinema";
 import ThemaLoadList from "./pages/shop/thema-load/ThemaLoadList";
 import FileDbList from "./pages/advanced/FileDbList";
+import AddFileDb from "./pages/advanced/AddFileDb";
+import FileDb from "./pages/advanced/FileDb";
 
 
 function App() {
@@ -231,6 +232,8 @@ function App() {
           
           {/* TODO: 파일 업로드 */}
           <Route path="/fileDb" element={<FileDbList />} />
+          <Route path="/add-fileDb" element={<AddFileDb />} />
+          <Route path="/fileDb/:uuid" element={<FileDb />} />
 
           {/* NotFound */}
           <Route path="*" element={<NotFound />} />

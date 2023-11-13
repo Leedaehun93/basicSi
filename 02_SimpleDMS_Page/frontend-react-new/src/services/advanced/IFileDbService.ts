@@ -41,14 +41,14 @@ const upload = (updateFileDb: IFileDb, fileDb: any): Promise<any> => {
   });
 };
 
-// 수정함수 : 저장 함수와 거의 동일하며, post 방시이 아닌 put 방식으로만 수정하면 됨.
+// 수정함수 : 저장 함수와 거의 동일하며, post 방식이 아닌 put 방식으로만 수정하면 됨.
 // 1) FormData 객체사용
 // 2)  headers: {"Content-Type": "multipart/form-data"}
 const updateFileDb = (uploadFileDb: IFileDb, fileDb: any): Promise<any> => {
   console.log("update() parameter ; ", uploadFileDb);
 
   let formData = new FormData();
-
+  formData.append("uuid", uploadFileDb.uuid);
   formData.append("fileTitle", uploadFileDb.fileTitle);
   formData.append("fileContent", uploadFileDb.fileContent);
   formData.append("fileDb", fileDb);
